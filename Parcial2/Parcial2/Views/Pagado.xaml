@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Parcial2.Views.Pagado"
+             Title="PaymentList"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             BackgroundColor="DarkOrange"
+             >
+
+    <ContentPage.Content>
+        <RefreshView IsEnabled="False" IsRefreshing="{Binding IsRefreshing, Mode=OneWay}"
+             Command="{Binding RefreshCommand}">
+            <CollectionView ItemsSource="{Binding ListPagos}"
+                                            SelectionMode="Single"
+                                            SelectionChanged="OnCollectionViewSelectionChanged">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="5"
+                               CornerRadius="5"
+                               IsClippedToBounds="False">
+                            <Grid HeightRequest="100">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".3*"/>
+                                    <ColumnDefinition Width=".7*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height=".5*"/>
+                                    <RowDefinition Height=".5*"/>
+                                </Grid.RowDefinitions>
+                                <Image Grid.RowSpan="2"
+                                       Source="carrito.png"/>
+                                <Label Grid.Column="1"
+                                       FontAttributes="Bold"
+                                       FontSize="Large"
+                                       Text="{Binding fecha, StringFormat='Fecha: {0}'}"
+                                       VerticalOptions="Center"/>
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    FontSize="Medium"
+                                    Text="{Binding montoTotal, StringFormat='Total Pagado: {0:C}'}"/>
+                            </Grid>
+
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>

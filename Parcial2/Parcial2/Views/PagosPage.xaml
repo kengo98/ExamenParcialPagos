@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"             
+             x:Class="Parcial2.Views.PagosPage"
+             Title="PaymentList"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <ContentPage.Content>
+        <StackLayout Padding="10,30,10,10" Spacing="10"
+                     BindingContext="{Binding ListPagos}">
+            <Label x:Name="titleLabel"
+                   Font="30"
+                   Text="Lista de Pagos"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="newButton"
+                        Text="+"
+                        BackgroundColor="Navy"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center"
+                        Command="{Binding newCommand}"
+                        WidthRequest="35"/>
+                <Button x:Name="findButton"
+                        Text="@"                        
+                        BackgroundColor="Navy"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center"
+                        WidthRequest="35"/>
+                <Button x:Name="updateButton"
+                        Text="^"                        
+                        BackgroundColor="Navy"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center"
+                        WidthRequest="35"/>
+                <Button x:Name="deleteButton"
+                        Text="-"                        
+                        BackgroundColor="Navy"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center"
+                        WidthRequest="35"/>
+            </StackLayout>
+            <ListView x:Name="PaymentListView"
+                      BackgroundColor="Silver"
+                      HasUnevenRows="True"
+                      IsPullToRefreshEnabled="True"
+                      IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"
+                      ItemsSource="{Binding ListPagos}"
+                      SeparatorVisibility="None"
+                      RefreshCommand="{Binding RefreshCommand}"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame
+                                CornerRadius="20"
+                                HasShadow="True"
+                                Margin="5">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout
+                                        Grid.Column="1"
+                                        VerticalOptions="Center">
+                                        <Label
+                                            FontSize="Medium"
+                                            Text="{Binding idCliente}"
+                                            TextColor="Black">
+                                        </Label>
+                                        <Label
+                                            FontSize="Medium"
+                                            Text="{Binding montoTotal}"
+                                            TextColor="Black">
+                                        </Label>
+                                        <Label
+                                            FontAttributes="Bold"
+                                            FontSize="Medium"
+                                            Text="{Binding pagado}"
+                                            TextColor="Black">
+                                        </Label>
+                                    </StackLayout>                                        
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

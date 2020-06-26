@@ -45,9 +45,15 @@
                             </Grid>
 
                         </Frame>
+                        
                     </DataTemplate>
+                    
                 </CollectionView.ItemTemplate>
+                
             </CollectionView>
+            
         </RefreshView>
+        
     </ContentPage.Content>
+
 </ContentPage>

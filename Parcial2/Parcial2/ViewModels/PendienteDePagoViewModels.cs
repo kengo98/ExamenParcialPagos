@@ -66,7 +66,7 @@
         {
             get
             {
-
+                this.isRefreshing = true;
                 RelayCommand a =  new RelayCommand(
                     LoadPagos);
                 this.isRefreshing = false;

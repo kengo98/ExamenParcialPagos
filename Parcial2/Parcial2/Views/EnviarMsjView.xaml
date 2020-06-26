@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Parcial2.Views.EnviarMsjView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Envia un Saludo"
+                        FontSize="Large"
+                       VerticalOptions="Center"/>
+            <Entry
+                x:Name="txtMensaje"
+                    FontSize="Large"
+                    Placeholder="Mensaje para enviar"
+                    Keyboard="Text"
+                    HorizontalOptions="FillAndExpand"
+                    Text="hola"
+                    >
+            </Entry>
+            <Button x:Name="btnMensaje"
+                        Text="ENVIAR MENSAJE"
+                        BackgroundColor="Navy"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center"
+                        WidthRequest="35"
+                        HeightRequest="35"
+                        Clicked="btnEnviarMensaje"
+                        />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

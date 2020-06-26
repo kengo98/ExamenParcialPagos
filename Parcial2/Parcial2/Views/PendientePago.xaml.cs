@@ -27,5 +27,11 @@ namespace Parcial2.Views
             Navigation.RemovePage(this);
 
         }
+       /* async void btnRefreshClicked(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new PendientePago());
+            Navigation.RemovePage(this);
+        }*/
+
     }
 }

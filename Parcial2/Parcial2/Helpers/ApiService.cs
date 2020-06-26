@@ -12,7 +12,7 @@ namespace Parcial2.Helpers
 {
     public class ApiService
     {
-        public async Task<List<T>> POST<T>(string urlBase, string servicePrefix, string controller, Pagos content)
+        public async Task<List<T>> POST<T>(string urlBase, string servicePrefix, string controller, T content)
         {
             try
             {
@@ -30,6 +30,7 @@ namespace Parcial2.Helpers
                 return null;
             }
         }
+
 
         public async Task<List<T>> Get<T>(string urlBase,string servicePrefix,string controller)
         {

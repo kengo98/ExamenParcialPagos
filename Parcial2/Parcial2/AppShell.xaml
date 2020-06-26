@@ -27,5 +27,10 @@
                 <views:Pagado/>
             </x:Arguments>
         </NavigationPage>
+        <NavigationPage Title="EnviarMsjView" Icon="pagadoIcon.png">
+            <x:Arguments>
+                <views:EnviarMsjView/>
+            </x:Arguments>
+        </NavigationPage>
     </TabbedPage.Children>
 </TabbedPage>

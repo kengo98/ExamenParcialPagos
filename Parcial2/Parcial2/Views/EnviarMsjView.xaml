@@ -29,6 +29,19 @@
                         HeightRequest="35"
                         Clicked="btnEnviarMensaje"
                         />
+            <Button x:Name="btnMostrarDato"
+                        Text="MOSTRAR ULTIMOS 10 REGISTROS"
+                        BackgroundColor="Navy"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center"
+                        WidthRequest="35"
+                        HeightRequest="35"
+                        Clicked="btnMostrarUltimo"
+                        />
+
+
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

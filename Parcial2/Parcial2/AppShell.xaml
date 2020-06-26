@@ -32,5 +32,6 @@
                 <views:EnviarMsjView/>
             </x:Arguments>
         </NavigationPage>
+
     </TabbedPage.Children>
 </TabbedPage>

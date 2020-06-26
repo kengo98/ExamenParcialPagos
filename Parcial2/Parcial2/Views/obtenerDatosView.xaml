@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Parcial2.Views.obtenerDatosView"
+             Title="Lista de temperatura y humedad"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             BackgroundColor="DarkOrange"
+             >
+
+    <ContentPage.Content>
+        <RefreshView IsEnabled="False" IsRefreshing="{Binding IsRefreshing, Mode=OneWay}"
+             Command="{Binding RefreshCommand}">
+            <CollectionView ItemsSource="{Binding ListDatos}"
+                                        SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="5"
+                           CornerRadius="5"
+                           IsClippedToBounds="False">
+                            <Grid HeightRequest="100">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".3*"/>
+                                    <ColumnDefinition Width=".7*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height=".5*"/>
+                                    <RowDefinition Height=".5*"/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Column="1"
+                                   FontAttributes="Bold"
+                                   FontSize="Large"
+                                   Text="{Binding messageId, StringFormat='messageId: {0}'}"
+                                   VerticalOptions="Center"/>
+                                <Label
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                FontSize="Medium"
+                                Text="{Binding deviceId, StringFormat='deviceId: {0}'}"/>
+                                <Label
+                                Grid.Row="1"
+                                Grid.Column="2"
+                                FontSize="Medium"
+                                Text="{Binding temperature, StringFormat='temperature: {0}'}"/>
+                                <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                FontSize="Medium"
+                                Text="{Binding humidity, StringFormat='humidity: {0}'}"/>
+                            </Grid>
+
+                        </Frame>
+
+                    </DataTemplate>
+
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+        </RefreshView>
+
+    </ContentPage.Content>
+
+</ContentPage>

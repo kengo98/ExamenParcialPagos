@@ -27,10 +27,14 @@ namespace Parcial2.Views
             };
             EnviarMensajeViewModel mensaje = new EnviarMensajeViewModel(a);
             await DisplayAlert("Alert", "Mensaje enviado Correctamente", "OK");
-
-
-
-
         }
+
+        async void btnMostrarUltimo(object sender, EventArgs args)
+        {
+            Navigation.PushAsync(new obtenerDatosView());
+            //Navigation.RemovePage(this);
+        }
+
+        
     }
 }
